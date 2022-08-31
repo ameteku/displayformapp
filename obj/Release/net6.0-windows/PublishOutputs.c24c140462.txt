@@ -1,0 +1,5 @@
+C:\Users\jfser\source\repos\DisplayFormApp\bin\publish\DisplayFormApp.exe
+C:\Users\jfser\source\repos\DisplayFormApp\bin\publish\DisplayFormApp.dll
+C:\Users\jfser\source\repos\DisplayFormApp\bin\publish\DisplayFormApp.deps.json
+C:\Users\jfser\source\repos\DisplayFormApp\bin\publish\DisplayFormApp.runtimeconfig.json
+C:\Users\jfser\source\repos\DisplayFormApp\bin\publish\DisplayFormApp.pdb
