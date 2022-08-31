@@ -6,6 +6,7 @@
 **Future Goals for Schedule Display App**:
 - Improve readability of the schedule form. 
 - Automate the pulling of data from the sharepoint calender
+- Handle Data Cleaning
 - nit: Improve general code structure
 
 **Improve readability of the schedule form**
