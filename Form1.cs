@@ -126,23 +126,24 @@ namespace DisplayFormApp
 
             updateDataSource(currentDate);
 
-            label1.Text =currentDate.ToString();
+            label1.Text = currentDate.ToString();
 
             FormBorderStyle = FormBorderStyle.None;
             WindowState = FormWindowState.Maximized;
 
+            modifyGridView1();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             DateTime currentTime = DateTime.Now;
+      
             this.label1.Text =currentTime.ToString();
 
             if (currentDay != currentTime.Day)
             {
                 updateDataSource(currentTime);
-            }
-           
+            } 
         }
 
         private void updateDataSource(DateTime currentTime)

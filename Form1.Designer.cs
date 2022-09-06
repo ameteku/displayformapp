@@ -1,4 +1,7 @@
-﻿namespace DisplayFormApp
+﻿using System.Runtime.CompilerServices;
+using System.Windows.Forms;
+
+namespace DisplayFormApp
 {
     partial class Form1
     {
@@ -49,15 +52,14 @@
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dataGridView1.GridColor = System.Drawing.Color.Cyan;
             this.dataGridView1.Location = new System.Drawing.Point(1, 152);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.RowTemplate.Height = 50;
@@ -190,6 +192,25 @@
         }
 
         #endregion
+
+
+        public void modifyGridView1()
+        {
+            List<String> enlargedColumns = new List<String>() { "Subject", "InstructorName" };
+            this.dataGridView1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+
+            DataGridViewColumnCollection columns = this.dataGridView1.Columns;
+            if (columns.Count > 0)
+            {
+                foreach(DataGridViewColumn column in columns)
+                {
+                    if(enlargedColumns.Contains(column.HeaderText))
+                    {
+                        column.FillWeight = 300;
+                    }
+                }
+            }
+        }
 
         private DataGridView dataGridView1;
         private PictureBox pictureBox1;
