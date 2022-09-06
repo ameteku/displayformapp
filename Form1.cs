@@ -4,6 +4,7 @@ namespace DisplayFormApp
     {
         public List<Class> Classes { get; set; }
         public List<Class> UnfilteredClasses { get; set; }
+        private int currentDay;
         
         public Form1()
         {
@@ -120,9 +121,13 @@ namespace DisplayFormApp
     
         private void Form1_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = Classes;
-            label1.Text = DateTime.Now.ToString();
-            
+            DateTime currentDate = DateTime.Now;
+            currentDay = currentDate.Day;
+
+            updateDataSource(currentDate);
+
+            label1.Text =currentDate.ToString();
+
             FormBorderStyle = FormBorderStyle.None;
             WindowState = FormWindowState.Maximized;
 
@@ -130,7 +135,45 @@ namespace DisplayFormApp
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            this.label1.Text = DateTime.Now.ToString();
+            DateTime currentTime = DateTime.Now;
+            this.label1.Text =currentTime.ToString();
+
+            if (currentDay != currentTime.Day)
+            {
+                updateDataSource(currentTime);
+            }
+           
+        }
+
+        private void updateDataSource(DateTime currentTime)
+        {
+                currentDay = currentTime.Day;
+                dataGridView1.DataSource = Classes.Where(singleClass => singleClass.Date.Day == currentDay).ToList();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
 
         /*
@@ -142,8 +185,8 @@ namespace DisplayFormApp
             }
         }
         */
-        
-       
+
+
     }
 
     
