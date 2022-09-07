@@ -1,3 +1,5 @@
+using DisplayFormApp.utils;
+
 namespace DisplayFormApp
 {
     public partial class Form1 : Form
@@ -88,8 +90,8 @@ namespace DisplayFormApp
                         foreach (var item in records)
                         {
                             if (item.Length > 2)
-                            {
-                                list.Add(item);
+                           {
+                                list.Add(item);                             
                             }
                         }
                     }
@@ -97,12 +99,12 @@ namespace DisplayFormApp
                     classes.Add(new Class
                     {
                         
-                        Subject = list[0],
+                        Subject = UtilityFunctions.removeOpenAndClosingQoutationMarks(list[0]),
                         RoomNumber = currentRoomNumber,
-                        Date = DateOnly.Parse(list[1].Substring(1, list[1].Length - 2)),
-                        StartTime = list[2],
-                        EndTime = list[4],
-                        InstructorName = list[10]
+                        Date = DateOnly.Parse(list[1].Substring(1, list[1].Length -2 )),
+                        StartTime = UtilityFunctions.removeOpenAndClosingQoutationMarks(list[2]),
+                        EndTime = UtilityFunctions.removeOpenAndClosingQoutationMarks(list[4]),
+                        InstructorName = UtilityFunctions.removeOpenAndClosingQoutationMarks(list[10])
                         
                     }
                     );
