@@ -43,3 +43,17 @@ The form is currently readable. The text is a little hard to see as the schedule
     - Simple to do
   - Cons:
     - Can't really think of any
+
+
+** Automate Pulling of Data from SharePoint Calender **
+Currently, in order to update the application with new data, someone has to manually go through a long and repetitive process to pull the data from sharepoint before even uploading.
+
+Microsoft has made an api available for interacting with thye calender data.  Using the API, we can create the option of the program automatically pulling the data periodically.
+
+After some digging, the required steps needed to make this happen are:
+1.  Register an application with microsoft (azure){https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/users-default-permissions#to-restrict-the-default-permissions-for-member-users}
+ This step needs a microsoft account. I tried using my sa account only to see that we have permissions for accessing api's turned of by default.
+ A solution to this is just asking admin( Matt) fpr access for our SA accounts.
+ Another solution is to create an account with permissions only to pull data from the API and register applications. 
+ 
+2. Use the c# (sdk){https://github.com/microsoftgraph/msgraph-sdk-dotnet}
