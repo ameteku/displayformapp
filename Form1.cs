@@ -7,7 +7,8 @@ namespace DisplayFormApp
         public List<Class> Classes { get; set; }
         public List<Class> UnfilteredClasses { get; set; }
         private int currentDay;
-        
+        enum DataGridView1Headers { Subject, InstructorName, RoomNumber, StartTime, EndTime, Date }
+
         public Form1()
         {
             Classes = getClasses();
@@ -102,10 +103,9 @@ namespace DisplayFormApp
                         Subject = UtilityFunctions.removeOpenAndClosingQoutationMarks(list[0]),
                         RoomNumber = currentRoomNumber,
                         Date = DateOnly.Parse(list[1].Substring(1, list[1].Length -2 )),
-                        StartTime = UtilityFunctions.removeOpenAndClosingQoutationMarks(list[2]),
-                        EndTime = UtilityFunctions.removeOpenAndClosingQoutationMarks(list[4]),
-                        InstructorName = UtilityFunctions.removeOpenAndClosingQoutationMarks(list[10])
-                        
+                        StartTime = UtilityFunctions.toShortTimeOnlyString(UtilityFunctions.removeOpenAndClosingQoutationMarks(list[2])),
+                        EndTime = UtilityFunctions.toShortTimeOnlyString(UtilityFunctions.removeOpenAndClosingQoutationMarks(list[4])),
+                        InstructorName = UtilityFunctions.removeOpenAndClosingQoutationMarks(list[10]) 
                     }
                     );
 
@@ -175,6 +175,11 @@ namespace DisplayFormApp
         }
 
         private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

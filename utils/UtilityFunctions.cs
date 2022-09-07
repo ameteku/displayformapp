@@ -23,5 +23,16 @@ namespace DisplayFormApp.utils
             }
             return stringObject;
         }
+
+        public static String toShortTimeOnlyString(String timeString)
+        {
+            TimeOnly result;
+            if(TimeOnly.TryParse(timeString, out result))
+            {
+                return result.ToString();
+            }
+
+            return timeString;
+        }
     }
 }
