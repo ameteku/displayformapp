@@ -1,28 +1,29 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jfser\\source\\repos\\DisplayFormApp\\DisplayFormApp.csproj": {}
+    "C:\\Users\\sa_ma368\\Desktop\\displayformapp\\DisplayFormApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jfser\\source\\repos\\DisplayFormApp\\DisplayFormApp.csproj": {
+    "C:\\Users\\sa_ma368\\Desktop\\displayformapp\\DisplayFormApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jfser\\source\\repos\\DisplayFormApp\\DisplayFormApp.csproj",
+        "projectUniqueName": "C:\\Users\\sa_ma368\\Desktop\\displayformapp\\DisplayFormApp.csproj",
         "projectName": "DisplayFormApp",
-        "projectPath": "C:\\Users\\jfser\\source\\repos\\DisplayFormApp\\DisplayFormApp.csproj",
-        "packagesPath": "C:\\Users\\jfser\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jfser\\source\\repos\\DisplayFormApp\\obj\\",
+        "projectPath": "C:\\Users\\sa_ma368\\Desktop\\displayformapp\\DisplayFormApp.csproj",
+        "packagesPath": "C:\\Users\\sa_ma368\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sa_ma368\\Desktop\\displayformapp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\jfser\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sa_ma368\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0-windows7.0"
+          "net6.0-windows"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -49,7 +50,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -61,7 +63,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
