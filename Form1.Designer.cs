@@ -76,7 +76,7 @@ namespace DisplayFormApp
             this.dataGridView1.RowTemplate.ReadOnly = true;
             this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dataGridView1.Size = new System.Drawing.Size(1033, 2000);
+            this.dataGridView1.Size = new System.Drawing.Size(1033, 5000);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -206,6 +206,9 @@ namespace DisplayFormApp
 
         public void modifyGridView1()
         {
+            dataGridView1.DataSource = insertLabNamesAsRows((List<Class>)dataGridView1.DataSource);
+
+            Console.Write(dataGridView1.DataSource.ToString() + "hi");
             DataGridViewColumnCollection columns = this.dataGridView1.Columns;
             if (columns.Count > 0)
             {
@@ -246,25 +249,29 @@ namespace DisplayFormApp
 
         List<Class> insertLabNamesAsRows(List<Class> rows)
         {
-            List<Class> newClassData;
-            List<String> labNames;
-            labNames = rows.DistinctBy(classItem => classItem.RoomNumber).Select(classItem => classItem.RoomNumber).ToList();
+            List<Class> newClassData = rows;
+            List<String> labNames = rows.DistinctBy(classItem => classItem.RoomNumber).Select(classItem => classItem.RoomNumber).ToList();
             
-            //insert the first rows name,
-            //then for each new row, insert a row name.
-            newClassData.insert(0, new Class(null, null, null, labNames[0]));
+            //insert the first labs name,
+            //then for the starting of a new labroom number, insert a row name.
+            newClassData.Insert(0,new Class { RoomNumber = labNames[0]});
+            newClassData.Insert(0, new Class { RoomNumber = labNames[0] });
 
             int currentLabNamePosition = 0;
             String previousRoomNumber = newClassData[0].RoomNumber;
-            for(int i = 1; i < newClassData.length; i++) {
+            for(int i = 0; i < newClassData.Count -1; i++) { 
                 if(previousRoomNumber != newClassData[i].RoomNumber) {
                     currentLabNamePosition++;
                     previousRoomNumber = newClassData[i].RoomNumber;
-                    newClassData.insert(i, new Class(null, null, labNames[currentLabNamePosition]));
+                    newClassData.Insert(i, new Class { RoomNumber = labNames[currentLabNamePosition] });
+                    i++;
+                }
+
+                if(labNames.Count - 1 == currentLabNamePosition)
+                {
+                    break;
                 }
             }
-
-
             return newClassData;
         }
 

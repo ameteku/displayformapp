@@ -133,7 +133,6 @@ namespace DisplayFormApp
             FormBorderStyle = FormBorderStyle.None;
             WindowState = FormWindowState.Maximized;
 
-            modifyGridView1();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -152,7 +151,9 @@ namespace DisplayFormApp
         private void updateDataSource(DateTime currentTime)
         {
              currentDay = currentTime.Day;
-            dataGridView1.DataSource = Classes.Where(singleClass => singleClass.Date.Day == currentDay).ToList();   
+            dataGridView1.DataSource = Classes.Where(singleClass => singleClass.Date.Day == currentDay).ToList();
+            modifyGridView1();
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
