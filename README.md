@@ -51,10 +51,19 @@ Currently, in order to update the application with new data, someone has to manu
 
 Microsoft has made an api available for interacting with thye calender data.  Using the API, we can create the option of the program automatically pulling the data periodically.
 
-After some digging, the required steps needed to make this happen are:
-1.  Register an application with microsoft [azure](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/users-default-permissions#to-restrict-the-default-permissions-for-member-users)
- This step needs a microsoft account. I tried using my sa account only to see that we have permissions for accessing api's turned of by default.
- A solution to this is just asking admin( Matt) fpr access for our SA accounts.
- Another solution is to create an account with permissions only to pull data from the API and register applications. 
+After some digging, things I found are:
+sharepoint has two versions of their REST api;
+- https://uazips.sharepoint.com/_api/v1.0/
+- https://uazips.sharepoint.com/_api/v2.0/
+
+Inorder to access any of them, your account needs to be logged in and authorized.
+examples of endpoints that can be accessed are: 
+- /drives/
+- /sites/
+- /drive/
+- /lists
+
+To get a date item: https://uazips.sharepoint.com/sites/cba/labs/_api/web/lists/GetByTitle('CBA%20101')/Items(520)
  
 2. Use the c# [sdk](https://github.com/microsoftgraph/msgraph-sdk-dotnet)
+
