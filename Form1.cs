@@ -115,6 +115,8 @@ namespace DisplayFormApp
             }
 
             classes = classes.OrderBy(o => o.RoomNumber).ThenBy(o => o.Date).ThenBy(o => o.StartTime).ToList();
+            classes = insertLabNamesAsRows(classes);
+
 
             return classes;
 
@@ -150,10 +152,9 @@ namespace DisplayFormApp
         //updates data being displayed in the datagrid with the schedule of the current day.
         private void updateDataSource(DateTime currentTime)
         {
-             currentDay = currentTime.Day;
-            dataGridView1.DataSource = Classes.Where(singleClass => singleClass.Date.Day == currentDay).ToList();
+            currentDay = currentTime.Day;
+            dataGridView1.DataSource = Classes.Where(singleClass =>  (singleClass.InstructorName == null && singleClass.Subject == null && singleClass.RoomNumber != null) || singleClass.Date.Day == currentDay).ToList();
             modifyGridView1();
-
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

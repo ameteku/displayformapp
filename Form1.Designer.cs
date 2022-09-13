@@ -206,7 +206,6 @@ namespace DisplayFormApp
 
         public void modifyGridView1()
         {
-            dataGridView1.DataSource = insertLabNamesAsRows((List<Class>)dataGridView1.DataSource);
 
             Console.Write(dataGridView1.DataSource.ToString() + "hi");
             DataGridViewColumnCollection columns = this.dataGridView1.Columns;
@@ -240,10 +239,7 @@ namespace DisplayFormApp
                         column.FillWeight = 59;
                     }
                 }
-            }
-
-           
-            
+            }   
 
         }
 
@@ -255,7 +251,6 @@ namespace DisplayFormApp
             //insert the first labs name,
             //then for the starting of a new labroom number, insert a row name.
             newClassData.Insert(0,new Class { RoomNumber = labNames[0]});
-            newClassData.Insert(0, new Class { RoomNumber = labNames[0] });
 
             int currentLabNamePosition = 0;
             String previousRoomNumber = newClassData[0].RoomNumber;
