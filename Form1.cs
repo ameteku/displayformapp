@@ -115,8 +115,6 @@ namespace DisplayFormApp
             }
 
             classes = classes.OrderBy(o => o.RoomNumber).ThenBy(o => o.Date).ThenBy(o => o.StartTime).ToList();
-            classes = insertLabNamesAsRows(classes);
-
 
             return classes;
 
@@ -153,7 +151,9 @@ namespace DisplayFormApp
         private void updateDataSource(DateTime currentTime)
         {
             currentDay = currentTime.Day;
-            dataGridView1.DataSource = Classes.Where(singleClass =>  (singleClass.InstructorName == null && singleClass.Subject == null && singleClass.RoomNumber != null) || singleClass.Date.Day == currentDay).ToList();
+            List<Class> classes = Classes.Where(singleClass =>  (singleClass.InstructorName == null && singleClass.Subject == null && singleClass.RoomNumber != null) || singleClass.Date.Day == currentDay).ToList();
+            dataGridView1.DataSource = blankSameLabConsecutiveNames(classes);
+
             modifyGridView1();
         }
 

@@ -76,7 +76,7 @@ namespace DisplayFormApp
             this.dataGridView1.RowTemplate.ReadOnly = true;
             this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dataGridView1.Size = new System.Drawing.Size(1033, 5000);
+            this.dataGridView1.Size = new System.Drawing.Size(1033, 3871);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -207,8 +207,8 @@ namespace DisplayFormApp
         public void modifyGridView1()
         {
 
-            Console.Write(dataGridView1.DataSource.ToString() + "hi");
             DataGridViewColumnCollection columns = this.dataGridView1.Columns;
+            
             if (columns.Count > 0)
             {
                 foreach(DataGridViewColumn column in columns)
@@ -228,6 +228,9 @@ namespace DisplayFormApp
                     {
                         column.FillWeight = 30;
                         column.HeaderText = "Room#";
+                        column.DefaultCellStyle.Font = new Font("Segoe UI", 15,FontStyle.Bold); 
+                       
+
                     }
                     else if( headerText == DataGridView1Headers.Date.ToString())
                     {
@@ -243,33 +246,30 @@ namespace DisplayFormApp
 
         }
 
-        List<Class> insertLabNamesAsRows(List<Class> rows)
+        List<Class> blankSameLabConsecutiveNames(List<Class> rows)
         {
             List<Class> newClassData = rows;
-            List<String> labNames = rows.DistinctBy(classItem => classItem.RoomNumber).Select(classItem => classItem.RoomNumber).ToList();
             
             //insert the first labs name,
             //then for the starting of a new labroom number, insert a row name.
-            newClassData.Insert(0,new Class { RoomNumber = labNames[0]});
 
-            int currentLabNamePosition = 0;
             String previousRoomNumber = newClassData[0].RoomNumber;
-            for(int i = 0; i < newClassData.Count -1; i++) { 
-                if(previousRoomNumber != newClassData[i].RoomNumber) {
-                    currentLabNamePosition++;
+            for(int i = 1; i < newClassData.Count; i++) { 
+                if(previousRoomNumber == newClassData[i].RoomNumber) {
+                   
+                    newClassData[i].RoomNumber = null;
+                }
+                else
+                {
                     previousRoomNumber = newClassData[i].RoomNumber;
-                    newClassData.Insert(i, new Class { RoomNumber = labNames[currentLabNamePosition] });
-                    i++;
                 }
 
-                if(labNames.Count - 1 == currentLabNamePosition)
-                {
-                    break;
-                }
+
             }
             return newClassData;
         }
 
+        
         private DataGridView dataGridView1;
         private PictureBox pictureBox1;
         private Label label1;
