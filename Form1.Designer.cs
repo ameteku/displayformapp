@@ -76,9 +76,10 @@ namespace DisplayFormApp
             this.dataGridView1.RowTemplate.ReadOnly = true;
             this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dataGridView1.Size = new System.Drawing.Size(1033, 2000);
+            this.dataGridView1.Size = new System.Drawing.Size(1033, 3871);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridView1_CellPainting);
             // 
             // pictureBox1
             // 
@@ -206,7 +207,9 @@ namespace DisplayFormApp
 
         public void modifyGridView1()
         {
+
             DataGridViewColumnCollection columns = this.dataGridView1.Columns;
+            
             if (columns.Count > 0)
             {
                 foreach(DataGridViewColumn column in columns)
@@ -226,6 +229,7 @@ namespace DisplayFormApp
                     {
                         column.FillWeight = 30;
                         column.HeaderText = "Room#";
+                        column.DefaultCellStyle.Font = new Font("Segoe UI", 15,FontStyle.Bold); 
                     }
                     else if( headerText == DataGridView1Headers.Date.ToString())
                     {
@@ -237,9 +241,29 @@ namespace DisplayFormApp
                         column.FillWeight = 59;
                     }
                 }
+            } 
+        }
+
+        private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+
+           if(e.Value == null && e.ColumnIndex == 0)
+            {
+                e.AdvancedBorderStyle.Bottom = DataGridViewAdvancedCellBorderStyle.None;
+            }
+           else if(e.Value != null &&  e.ColumnIndex == 0)
+            {
+                e.AdvancedBorderStyle.Top = DataGridViewAdvancedCellBorderStyle.Single;
+                e.AdvancedBorderStyle.Bottom = DataGridViewAdvancedCellBorderStyle.None;
+
             }
 
+           if(e.ColumnIndex == 0)
+            {
+                e.AdvancedBorderStyle.Left = DataGridViewAdvancedCellBorderStyle.Single;
+            }
         }
+
 
         private DataGridView dataGridView1;
         private PictureBox pictureBox1;

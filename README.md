@@ -43,3 +43,27 @@ The form is currently readable. The text is a little hard to see as the schedule
     - Simple to do
   - Cons:
     - Can't really think of any
+
+
+**Automate Pulling of Data from SharePoint Calender**
+
+Currently, in order to update the application with new data, someone has to manually go through a long and repetitive process to pull the data from sharepoint before even uploading.
+
+Microsoft has made an api available for interacting with thye calender data.  Using the API, we can create the option of the program automatically pulling the data periodically.
+
+After some digging, things I found are:
+sharepoint has two versions of their REST api;
+- https://uazips.sharepoint.com/_api/v1.0/
+- https://uazips.sharepoint.com/_api/v2.0/
+
+Inorder to access any of them, your account needs to be logged in and authorized.
+examples of endpoints that can be accessed are: 
+- /drives/
+- /sites/
+- /drive/
+- /lists
+
+To get a date item: https://uazips.sharepoint.com/sites/cba/labs/_api/web/lists/GetByTitle('CBA%20101')/Items(520)
+ 
+2. Use the c# [sdk](https://github.com/microsoftgraph/msgraph-sdk-dotnet)
+

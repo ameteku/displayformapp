@@ -8,9 +8,9 @@ namespace DisplayFormApp
 {
     public class Class
     {
+        public string RoomNumber { get; set; }
         public string Subject { get; set; }
         public string InstructorName { get; set; }
-        public string RoomNumber { get; set; }
         public string StartTime { get; set; }
         public string EndTime { get; set; }
         public DateOnly Date { get; set; }
