@@ -79,6 +79,7 @@ namespace DisplayFormApp
             this.dataGridView1.Size = new System.Drawing.Size(1033, 3871);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridView1_CellPainting);
             // 
             // pictureBox1
             // 
@@ -229,8 +230,6 @@ namespace DisplayFormApp
                         column.FillWeight = 30;
                         column.HeaderText = "Room#";
                         column.DefaultCellStyle.Font = new Font("Segoe UI", 15,FontStyle.Bold); 
-                       
-
                     }
                     else if( headerText == DataGridView1Headers.Date.ToString())
                     {
@@ -242,34 +241,30 @@ namespace DisplayFormApp
                         column.FillWeight = 59;
                     }
                 }
-            }   
-
+            } 
         }
 
-        List<Class> blankSameLabConsecutiveNames(List<Class> rows)
+        private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            List<Class> newClassData = rows;
-            
-            //insert the first labs name,
-            //then for the starting of a new labroom number, insert a row name.
 
-            String previousRoomNumber = newClassData[0].RoomNumber;
-            for(int i = 1; i < newClassData.Count; i++) { 
-                if(previousRoomNumber == newClassData[i].RoomNumber) {
-                   
-                    newClassData[i].RoomNumber = null;
-                }
-                else
-                {
-                    previousRoomNumber = newClassData[i].RoomNumber;
-                }
-
+           if(e.Value == null && e.ColumnIndex == 0)
+            {
+                e.AdvancedBorderStyle.Bottom = DataGridViewAdvancedCellBorderStyle.None;
+            }
+           else if(e.Value != null &&  e.ColumnIndex == 0)
+            {
+                e.AdvancedBorderStyle.Top = DataGridViewAdvancedCellBorderStyle.Single;
+                e.AdvancedBorderStyle.Bottom = DataGridViewAdvancedCellBorderStyle.None;
 
             }
-            return newClassData;
+
+           if(e.ColumnIndex == 0)
+            {
+                e.AdvancedBorderStyle.Left = DataGridViewAdvancedCellBorderStyle.Single;
+            }
         }
 
-        
+
         private DataGridView dataGridView1;
         private PictureBox pictureBox1;
         private Label label1;

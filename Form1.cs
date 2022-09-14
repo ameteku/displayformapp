@@ -120,7 +120,29 @@ namespace DisplayFormApp
 
         }
 
-    
+        List<Class> blankSameConsecutiveLabNames(List<Class> rows)
+        {
+            List<Class> newClassData = rows;
+
+            //insert the first labs name,
+            //then for the starting of a new labroom number, insert a row name.
+
+            String previousRoomNumber = newClassData[0].RoomNumber;
+            for (int i = 1; i < newClassData.Count; i++)
+            {
+                if (previousRoomNumber == newClassData[i].RoomNumber)
+                {
+
+                    newClassData[i].RoomNumber = null;
+                }
+                else
+                {
+                    previousRoomNumber = newClassData[i].RoomNumber;
+                }
+            }
+            return newClassData;
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             DateTime currentDate = DateTime.Now;
@@ -147,12 +169,13 @@ namespace DisplayFormApp
             } 
         }
 
+
         //updates data being displayed in the datagrid with the schedule of the current day.
         private void updateDataSource(DateTime currentTime)
         {
             currentDay = currentTime.Day;
             List<Class> classes = Classes.Where(singleClass =>  (singleClass.InstructorName == null && singleClass.Subject == null && singleClass.RoomNumber != null) || singleClass.Date.Day == currentDay).ToList();
-            dataGridView1.DataSource = blankSameLabConsecutiveNames(classes);
+            dataGridView1.DataSource = blankSameConsecutiveLabNames(classes);
 
             modifyGridView1();
         }
