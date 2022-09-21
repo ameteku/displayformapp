@@ -70,3 +70,12 @@ Interesting finds:
   - A work around is to query for events that are set to recur(have a boolean field that is set to true if it recurs) and match the cadence against your date.
 
 
+*Questions:*
+- How often is the data updated/ events editted or added?
+  - all course schedules created at the start of the sem
+  - maybe once in a week 
+- How often should we pull the data?
+ - on the daily?
+ - start of the week?
+- Do we want to keep the manual pulling of data?
+  yes
