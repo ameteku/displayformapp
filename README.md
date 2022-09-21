@@ -67,7 +67,10 @@ examples of endpoints that can be accessed are:
 To get a date item: https://uazips.sharepoint.com/sites/cba/labs/_api/web/lists/GetByTitle('CBA%20101')/Items(520)
 
 
-This website provides instructions for filtering a list(in our case a labs) items(events): [here](https://social.technet.microsoft.com/wiki/contents/articles/35796.sharepoint-2013-using-rest-api-for-selecting-filtering-sorting-and-pagination-in-sharepoint-list.aspx)
+This website provides instructions for filtering/ordering/paging a list(in our case a labs) items(events): [here](https://social.technet.microsoft.com/wiki/contents/articles/35796.sharepoint-2013-using-rest-api-for-selecting-filtering-sorting-and-pagination-in-sharepoint-list.aspx)
+
+Eg. To get only a the title of each event in the lab: 
+https://uazips.sharepoint.com/sites/cba/labs/_api/web/Lists/GetByTitle('CBA%20106')/items?$select=Title
  
 2. Use the c# [sdk](https://github.com/microsoftgraph/msgraph-sdk-dotnet)
 
