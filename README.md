@@ -71,6 +71,9 @@ This website provides instructions for filtering/ordering/paging a list(in our c
 
 Eg. To get only a the title of each event in the lab: 
 https://uazips.sharepoint.com/sites/cba/labs/_api/web/Lists/GetByTitle('CBA%20106')/items?$select=Title
+
+To get only events for or after 2022-09-21:
+https://uazips.sharepoint.com/sites/cba/labs/_api/web/Lists/GetByTitle('CBA%20106')/items?$select=Location,Title,EventDate&$filter=%20EndDate%20gt%20datetime%272022-09-21T12:00:00Z%27
  
 2. Use the c# [sdk](https://github.com/microsoftgraph/msgraph-sdk-dotnet)
 
