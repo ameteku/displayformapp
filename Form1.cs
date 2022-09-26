@@ -102,7 +102,7 @@ namespace DisplayFormApp
                         
                         Subject = UtilityFunctions.removeOpenAndClosingQoutationMarks(list[0]),
                         RoomNumber = currentRoomNumber,
-                        Date = DateOnly.Parse(list[1].Substring(1, list[1].Length -2 )),
+                        Date = DateOnly.Parse(list[1].Replace("\"", "" )),
                         StartTime = UtilityFunctions.toShortTimeOnlyString(UtilityFunctions.removeOpenAndClosingQoutationMarks(list[2])),
                         EndTime = UtilityFunctions.toShortTimeOnlyString(UtilityFunctions.removeOpenAndClosingQoutationMarks(list[4])),
                         InstructorName = UtilityFunctions.removeOpenAndClosingQoutationMarks(list[10]) 
