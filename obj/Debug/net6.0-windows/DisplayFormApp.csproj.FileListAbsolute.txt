@@ -55,3 +55,4 @@ D:\displayformapp\obj\Debug\net6.0-windows\refint\DisplayFormApp.dll
 D:\displayformapp\obj\Debug\net6.0-windows\DisplayFormApp.pdb
 D:\displayformapp\obj\Debug\net6.0-windows\DisplayFormApp.genruntimeconfig.cache
 D:\displayformapp\obj\Debug\net6.0-windows\ref\DisplayFormApp.dll
+C:\Users\sa_ma368\Desktop\displayformapp\obj\Debug\net6.0-windows\DisplayFormApp.MainEntry.MainEntryForm.resources

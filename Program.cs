@@ -1,3 +1,5 @@
+using DisplayFormApp.MainEntry;
+
 namespace DisplayFormApp
 {
     internal static class Program
@@ -12,7 +14,7 @@ namespace DisplayFormApp
             // see https://aka.ms/applicationconfiguration.
 
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form2());
+            Application.Run(new MainEntryForm());
         }
     }
 }
