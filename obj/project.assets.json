@@ -1,11 +1,117 @@
 {
   "version": 3,
   "targets": {
-    "net6.0-windows7.0": {}
+    "net6.0-windows7.0": {
+      "Microsoft.SharePointOnline.CSOM/16.1.22810.12000": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Office.Client.Policy.dll": {},
+          "lib/netstandard2.0/Microsoft.Office.Client.TranslationServices.dll": {},
+          "lib/netstandard2.0/Microsoft.Office.SharePoint.Tools.dll": {},
+          "lib/netstandard2.0/Microsoft.Online.SharePoint.Client.Tenant.dll": {},
+          "lib/netstandard2.0/Microsoft.ProjectServer.Client.dll": {},
+          "lib/netstandard2.0/Microsoft.SharePoint.Client.DocumentManagement.dll": {},
+          "lib/netstandard2.0/Microsoft.SharePoint.Client.Publishing.dll": {},
+          "lib/netstandard2.0/Microsoft.SharePoint.Client.Runtime.dll": {},
+          "lib/netstandard2.0/Microsoft.SharePoint.Client.Search.Applications.dll": {},
+          "lib/netstandard2.0/Microsoft.SharePoint.Client.Search.dll": {},
+          "lib/netstandard2.0/Microsoft.SharePoint.Client.Taxonomy.dll": {},
+          "lib/netstandard2.0/Microsoft.SharePoint.Client.UserProfiles.dll": {},
+          "lib/netstandard2.0/Microsoft.SharePoint.Client.WorkflowServices.dll": {},
+          "lib/netstandard2.0/Microsoft.SharePoint.Client.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Office.Client.Policy.dll": {},
+          "lib/netstandard2.0/Microsoft.Office.Client.TranslationServices.dll": {},
+          "lib/netstandard2.0/Microsoft.Office.SharePoint.Tools.dll": {},
+          "lib/netstandard2.0/Microsoft.Online.SharePoint.Client.Tenant.dll": {},
+          "lib/netstandard2.0/Microsoft.ProjectServer.Client.dll": {},
+          "lib/netstandard2.0/Microsoft.SharePoint.Client.DocumentManagement.dll": {},
+          "lib/netstandard2.0/Microsoft.SharePoint.Client.Publishing.dll": {},
+          "lib/netstandard2.0/Microsoft.SharePoint.Client.Runtime.dll": {},
+          "lib/netstandard2.0/Microsoft.SharePoint.Client.Search.Applications.dll": {},
+          "lib/netstandard2.0/Microsoft.SharePoint.Client.Search.dll": {},
+          "lib/netstandard2.0/Microsoft.SharePoint.Client.Taxonomy.dll": {},
+          "lib/netstandard2.0/Microsoft.SharePoint.Client.UserProfiles.dll": {},
+          "lib/netstandard2.0/Microsoft.SharePoint.Client.WorkflowServices.dll": {},
+          "lib/netstandard2.0/Microsoft.SharePoint.Client.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Microsoft.SharePointOnline.CSOM/16.1.22810.12000": {
+      "sha512": "LJ8LUmN3UNtS63suOL5l/OfjatlF+iyRx07piI/98fWcSIRmu7jdTB4nE55ZfwtO/mmRz67hoZDdf1OHRZGtxg==",
+      "type": "package",
+      "path": "microsoft.sharepointonline.csom/16.1.22810.12000",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/javascript/ps.js",
+        "lib/javascript/sp.datetimeutil.js",
+        "lib/javascript/sp.documentmanagement.js",
+        "lib/javascript/sp.js",
+        "lib/javascript/sp.publishing.js",
+        "lib/javascript/sp.requestexecutor.js",
+        "lib/javascript/sp.runtime.js",
+        "lib/javascript/sp.search.apps.js",
+        "lib/javascript/sp.search.js",
+        "lib/javascript/sp.taxonomy.js",
+        "lib/javascript/sp.translation.js",
+        "lib/javascript/sp.userprofiles.js",
+        "lib/javascript/sp.workflowservices.js",
+        "lib/javascript/sp.workmanagement.js",
+        "lib/net40-full/Microsoft.Office.Client.Policy.dll",
+        "lib/net40-full/Microsoft.Office.Client.TranslationServices.dll",
+        "lib/net40-full/Microsoft.Office.SharePoint.Tools.dll",
+        "lib/net40-full/Microsoft.Online.SharePoint.Client.Tenant.dll",
+        "lib/net40-full/Microsoft.ProjectServer.Client.dll",
+        "lib/net40-full/Microsoft.SharePoint.Client.DocumentManagement.dll",
+        "lib/net40-full/Microsoft.SharePoint.Client.Publishing.dll",
+        "lib/net40-full/Microsoft.SharePoint.Client.Runtime.dll",
+        "lib/net40-full/Microsoft.SharePoint.Client.Search.Applications.dll",
+        "lib/net40-full/Microsoft.SharePoint.Client.Search.dll",
+        "lib/net40-full/Microsoft.SharePoint.Client.Taxonomy.dll",
+        "lib/net40-full/Microsoft.SharePoint.Client.UserProfiles.dll",
+        "lib/net40-full/Microsoft.SharePoint.Client.WorkflowServices.dll",
+        "lib/net40-full/Microsoft.SharePoint.Client.dll",
+        "lib/net45/Microsoft.Office.Client.Policy.dll",
+        "lib/net45/Microsoft.Office.Client.TranslationServices.dll",
+        "lib/net45/Microsoft.Office.SharePoint.Tools.dll",
+        "lib/net45/Microsoft.Online.SharePoint.Client.Tenant.dll",
+        "lib/net45/Microsoft.ProjectServer.Client.dll",
+        "lib/net45/Microsoft.SharePoint.Client.DocumentManagement.dll",
+        "lib/net45/Microsoft.SharePoint.Client.Publishing.dll",
+        "lib/net45/Microsoft.SharePoint.Client.Runtime.dll",
+        "lib/net45/Microsoft.SharePoint.Client.Search.Applications.dll",
+        "lib/net45/Microsoft.SharePoint.Client.Search.dll",
+        "lib/net45/Microsoft.SharePoint.Client.Taxonomy.dll",
+        "lib/net45/Microsoft.SharePoint.Client.UserProfiles.dll",
+        "lib/net45/Microsoft.SharePoint.Client.WorkflowServices.dll",
+        "lib/net45/Microsoft.SharePoint.Client.dll",
+        "lib/netstandard2.0/Microsoft.Office.Client.Policy.dll",
+        "lib/netstandard2.0/Microsoft.Office.Client.TranslationServices.dll",
+        "lib/netstandard2.0/Microsoft.Office.SharePoint.Tools.dll",
+        "lib/netstandard2.0/Microsoft.Online.SharePoint.Client.Tenant.dll",
+        "lib/netstandard2.0/Microsoft.ProjectServer.Client.dll",
+        "lib/netstandard2.0/Microsoft.SharePoint.Client.DocumentManagement.dll",
+        "lib/netstandard2.0/Microsoft.SharePoint.Client.Publishing.dll",
+        "lib/netstandard2.0/Microsoft.SharePoint.Client.Runtime.dll",
+        "lib/netstandard2.0/Microsoft.SharePoint.Client.Search.Applications.dll",
+        "lib/netstandard2.0/Microsoft.SharePoint.Client.Search.dll",
+        "lib/netstandard2.0/Microsoft.SharePoint.Client.Taxonomy.dll",
+        "lib/netstandard2.0/Microsoft.SharePoint.Client.UserProfiles.dll",
+        "lib/netstandard2.0/Microsoft.SharePoint.Client.WorkflowServices.dll",
+        "lib/netstandard2.0/Microsoft.SharePoint.Client.dll",
+        "microsoft.sharepointonline.csom.16.1.22810.12000.nupkg.sha512",
+        "microsoft.sharepointonline.csom.nuspec"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0-windows7.0": []
+    "net6.0-windows7.0": [
+      "Microsoft.SharePointOnline.CSOM >= 16.1.22810.12000"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\sa_ma368\\.nuget\\packages\\": {},
@@ -14,11 +120,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sa_ma368\\Desktop\\displayformapp\\DisplayFormApp.csproj",
+      "projectUniqueName": "C:\\Users\\sa_ma368\\Source\\Repos\\ameteku\\displayformapp\\DisplayFormApp.csproj",
       "projectName": "DisplayFormApp",
-      "projectPath": "C:\\Users\\sa_ma368\\Desktop\\displayformapp\\DisplayFormApp.csproj",
+      "projectPath": "C:\\Users\\sa_ma368\\Source\\Repos\\ameteku\\displayformapp\\DisplayFormApp.csproj",
       "packagesPath": "C:\\Users\\sa_ma368\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sa_ma368\\Desktop\\displayformapp\\obj\\",
+      "outputPath": "C:\\Users\\sa_ma368\\Source\\Repos\\ameteku\\displayformapp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -50,6 +156,12 @@
     "frameworks": {
       "net6.0-windows7.0": {
         "targetAlias": "net6.0-windows",
+        "dependencies": {
+          "Microsoft.SharePointOnline.CSOM": {
+            "target": "Package",
+            "version": "[16.1.22810.12000, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

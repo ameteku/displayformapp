@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sa_ma368\\Desktop\\displayformapp\\DisplayFormApp.csproj": {}
+    "C:\\Users\\sa_ma368\\Source\\Repos\\ameteku\\displayformapp\\DisplayFormApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sa_ma368\\Desktop\\displayformapp\\DisplayFormApp.csproj": {
+    "C:\\Users\\sa_ma368\\Source\\Repos\\ameteku\\displayformapp\\DisplayFormApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sa_ma368\\Desktop\\displayformapp\\DisplayFormApp.csproj",
+        "projectUniqueName": "C:\\Users\\sa_ma368\\Source\\Repos\\ameteku\\displayformapp\\DisplayFormApp.csproj",
         "projectName": "DisplayFormApp",
-        "projectPath": "C:\\Users\\sa_ma368\\Desktop\\displayformapp\\DisplayFormApp.csproj",
+        "projectPath": "C:\\Users\\sa_ma368\\Source\\Repos\\ameteku\\displayformapp\\DisplayFormApp.csproj",
         "packagesPath": "C:\\Users\\sa_ma368\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sa_ma368\\Desktop\\displayformapp\\obj\\",
+        "outputPath": "C:\\Users\\sa_ma368\\Source\\Repos\\ameteku\\displayformapp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -43,6 +43,12 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "Microsoft.SharePointOnline.CSOM": {
+              "target": "Package",
+              "version": "[16.1.22810.12000, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

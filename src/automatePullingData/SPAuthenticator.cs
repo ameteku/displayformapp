@@ -1,15 +1,16 @@
 ﻿using Microsoft.SharePoint.Client;
 using System;
 using System.Security;
-using Microsoft.SharePointOnl
+//using Microsoft.SharePointOnl
 namespace DisplayFormApp.src.automatePullingData
 {
     internal class SPAuthenticator
     {
         private string siteCollectionUrl = "https://uazips.sharepoint.com";
+        bool isAuthenticated = false;
         private string username;
         private string password;
-        private string authToken;
+        private string authToken { get; }
 
         SPAuthenticator(string password, string username)
         {
@@ -19,12 +20,12 @@ namespace DisplayFormApp.src.automatePullingData
 
         void retrieveAuthToken()
         {
-            ClientContext ctx = new ClientContext(siteCollectionUrl);
+           ClientContext ctx = new ClientContext(siteCollectionUrl);
 
             SecureString secureString = new SecureString();
             password.ToList().ForEach(secureString.AppendChar);
 
-            ctx.Credentials = new SharePointOnline(username, secureString);
+          ctx.Credentials = new SharePoint(username, secureString);
         }
         
     }
