@@ -1,5 +1,6 @@
 ﻿using DisplayFormApp.DataSourceHandler;
 using DisplayFormApp.src;
+using DisplayFormApp.src.automatePullingData;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +19,7 @@ namespace DisplayFormApp.MainEntry
         Form2 folderPathGetterForm;
         AutomatePullingDataForm automatePullingDataForm;
         DataSourceWrapper dataSourceWrapper;
+
       
         public MainEntryForm()
         {
@@ -28,14 +30,13 @@ namespace DisplayFormApp.MainEntry
         {
             Console.WriteLine("Automate clicked");
             dataSourceWrapper = new DataSourceWrapper();
-            automatePullingDataForm = new AutomatePullingDataForm(ref dataSourceWrapper);
+            automatePullingDataForm = new AutomatePullingDataForm();
             DialogResult result = automatePullingDataForm.ShowDialog();
 
             if(result == DialogResult.OK)
             {
                 dataSourceWrapper.getClassesFunction = automatePullingDataForm.getClasses;
                 showScheduleForm();
-
             }
         }
 

@@ -17,20 +17,30 @@ namespace DisplayFormApp.src
     {
         SPAuthenticator sPAuthenticator;
         SPDataRetriever sPDataRetriever;
-        DataSourceWrapper sourceWrapper;
        
-        public AutomatePullingDataForm(ref DataSourceWrapper sourceWrapper)
+        public AutomatePullingDataForm()
         {
             InitializeComponent();
             modifyUIActions();
             sPAuthenticator = new SPAuthenticator();
-            sPDataRetriever = new SPDataRetriever(sPAuthenticator);
-            this.sourceWrapper = sourceWrapper;
+            sPDataRetriever = new SPDataRetriever();
         }
 
         public List<Class> getClasses()
         {
             List<Class> classes = new List<Class>();
+            string authToken = sPAuthenticator.authToken;
+
+            if (authToken == null || authToken == "")
+            {
+                Console.WriteLine("Authtoken is null when getting classes");
+                throw new ArgumentNullException("Authtoken is null when getting classes");
+            }
+
+            classes.Concat(sPDataRetriever.getLabData(LabName.lab101, authToken));
+            classes.Concat(sPDataRetriever.getLabData(LabName.lab176, authToken));
+            classes.Concat(sPDataRetriever.getLabData(LabName.lab106, authToken));
+
             return classes;
         }
 
@@ -48,9 +58,7 @@ namespace DisplayFormApp.src
 
             //on success close dialog and pass ok message to mainentry form
             if (isSuccess)
-            {
-                this.sourceWrapper.getClassesFunction = getClasses;
-                
+            {                
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }

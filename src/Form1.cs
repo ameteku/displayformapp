@@ -72,7 +72,8 @@ namespace DisplayFormApp
         private void updateDataSource(DateTime currentTime)
         {
             currentDay = currentTime.Day;
-            List<Class> classes = Classes.Where(singleClass =>  (singleClass.InstructorName == null && singleClass.Subject == null && singleClass.RoomNumber != null) || singleClass.Date.Day == currentDay).ToList();
+
+            List<Class> classes = dataSourceWrapper.getClassesFunction().Where(singleClass =>  (singleClass.InstructorName == null && singleClass.Subject == null && singleClass.RoomNumber != null) || singleClass.Date.Day == currentDay).ToList();
             dataGridView1.DataSource = blankSameConsecutiveLabNames(classes);
 
             modifyGridView1();
