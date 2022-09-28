@@ -7,7 +7,7 @@ namespace DisplayFormApp.src.automatePullingData
     internal class SPAuthenticator
     {
         private string siteCollectionUrl = "https://uazips.sharepoint.com";
-        bool isAuthenticated = false;
+       public bool isAuthenticated {get;}
         private string username;
         private string password;
         private string authToken { get; }
@@ -16,6 +16,7 @@ namespace DisplayFormApp.src.automatePullingData
         {
             this.password = password;
             this.username = username;
+            isAuthenticated = false;
         }
 
         void retrieveAuthToken()
