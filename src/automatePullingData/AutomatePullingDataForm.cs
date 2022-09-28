@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DisplayFormApp.DataSourceHandler;
+using DisplayFormApp.src.automatePullingData;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,24 +15,55 @@ namespace DisplayFormApp.src
 {
     public partial class AutomatePullingDataForm : Form
     {
+        SPAuthenticator sPAuthenticator;
+        SPDataRetriever sPDataRetriever;
+        DataSourceWrapper sourceWrapper;
        
-        public AutomatePullingDataForm()
+        public AutomatePullingDataForm(ref DataSourceWrapper sourceWrapper)
         {
             InitializeComponent();
+            modifyUIActions();
+            sPAuthenticator = new SPAuthenticator();
+            sPDataRetriever = new SPDataRetriever(sPAuthenticator);
+            this.sourceWrapper = sourceWrapper;
         }
 
-       public List<Class> getClasses()
+        public List<Class> getClasses()
         {
             List<Class> classes = new List<Class>();
             return classes;
         }
 
-        private void onPullDataButtonClicked()
+        private void onPullDataButtonClicked(Object obj, EventArgs e)
 
         {
             Console.WriteLine("Attempting to log in");
+            
+            //first get username and password and pass to the authenticator
+            string username = aliasInput.Text;
+            string password = passwordInput.Text;
+            bool isSuccess = sPAuthenticator.retrieveAuthToken(username, password);
+
+            Console.WriteLine("Login success?", isSuccess);
+
+            //on success close dialog and pass ok message to mainentry form
+            if (isSuccess)
+            {
+                this.sourceWrapper.getClassesFunction = getClasses;
+                
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+             else
+            {
+                errorText.Text = "Failed to login, try again";
+                passwordInput.Clear();
+            }
+
 
         }
+
+        
 
         private void AutomatePullingDataForm_Load(object sender, EventArgs e)
         {

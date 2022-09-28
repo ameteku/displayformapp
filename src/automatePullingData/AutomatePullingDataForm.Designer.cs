@@ -1,4 +1,6 @@
-﻿namespace DisplayFormApp.src
+﻿using System.Runtime.CompilerServices;
+
+namespace DisplayFormApp.src
 {
     partial class AutomatePullingDataForm
     {
@@ -34,10 +36,12 @@
             this.passwordLabel = new System.Windows.Forms.Label();
             this.pullDataButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.errorText = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // aliasInput
             // 
+            this.aliasInput.ForeColor = System.Drawing.SystemColors.InfoText;
             this.aliasInput.Location = new System.Drawing.Point(435, 130);
             this.aliasInput.Name = "aliasInput";
             this.aliasInput.Size = new System.Drawing.Size(176, 23);
@@ -84,18 +88,31 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 95);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(12, 61);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(476, 15);
+            this.label3.Size = new System.Drawing.Size(781, 28);
             this.label3.TabIndex = 5;
             this.label3.Text = "In order to pull the schedules automatically the application needs an account wit" +
     "h access";
+            // 
+            // errorText
+            // 
+            this.errorText.AutoSize = true;
+            this.errorText.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.errorText.ForeColor = System.Drawing.Color.Firebrick;
+            this.errorText.Location = new System.Drawing.Point(300, 89);
+            this.errorText.Name = "errorText";
+            this.errorText.Size = new System.Drawing.Size(140, 25);
+            this.errorText.TabIndex = 6;
+            this.errorText.Text = "";
             // 
             // AutomatePullingDataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.errorText);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pullDataButton);
             this.Controls.Add(this.passwordLabel);
@@ -112,11 +129,17 @@
 
         #endregion
 
+
+        void modifyUIActions()
+        {
+            pullDataButton.Click += onPullDataButtonClicked;
+        }       
         private TextBox aliasInput;
         private TextBox passwordInput;
         private Label aliasLabel;
         private Label passwordLabel;
         private Button pullDataButton;
         private Label label3;
+        private Label errorText;
     }
 }

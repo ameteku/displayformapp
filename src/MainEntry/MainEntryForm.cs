@@ -28,7 +28,7 @@ namespace DisplayFormApp.MainEntry
         {
             Console.WriteLine("Automate clicked");
             dataSourceWrapper = new DataSourceWrapper();
-            automatePullingDataForm = new AutomatePullingDataForm();
+            automatePullingDataForm = new AutomatePullingDataForm(ref dataSourceWrapper);
             DialogResult result = automatePullingDataForm.ShowDialog();
 
             if(result == DialogResult.OK)

@@ -4,29 +4,34 @@ using System.Security;
 //using Microsoft.SharePointOnl
 namespace DisplayFormApp.src.automatePullingData
 {
-    internal class SPAuthenticator
+    public  class SPAuthenticator
     {
         private string siteCollectionUrl = "https://uazips.sharepoint.com";
-       public bool isAuthenticated {get;}
-        private string username;
-        private string password;
+         private bool isAuthenticated { get; set; }
         private string authToken { get; }
 
-        SPAuthenticator(string password, string username)
+        public SPAuthenticator()
         {
-            this.password = password;
-            this.username = username;
             isAuthenticated = false;
         }
 
-        void retrieveAuthToken()
+       public bool IsAuthenticated()
         {
-           ClientContext ctx = new ClientContext(siteCollectionUrl);
+            return isAuthenticated;
+        }
+
+        public bool retrieveAuthToken(string password, string username)
+        {
+            bool isSuccess = false;
+            ClientContext ctx = new ClientContext(siteCollectionUrl);
 
             SecureString secureString = new SecureString();
             password.ToList().ForEach(secureString.AppendChar);
+            //ctx.Credentials = new SharePoint(username, secureString);
 
-          ctx.Credentials = new SharePoint(username, secureString);
+            isAuthenticated = isSuccess;
+            
+            return isSuccess;
         }
         
     }
