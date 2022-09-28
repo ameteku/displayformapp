@@ -42,14 +42,14 @@ namespace DisplayFormApp.src
             // aliasInput
             // 
             this.aliasInput.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.aliasInput.Location = new System.Drawing.Point(435, 130);
+            this.aliasInput.Location = new System.Drawing.Point(251, 104);
             this.aliasInput.Name = "aliasInput";
             this.aliasInput.Size = new System.Drawing.Size(176, 23);
             this.aliasInput.TabIndex = 0;
             // 
             // passwordInput
             // 
-            this.passwordInput.Location = new System.Drawing.Point(435, 205);
+            this.passwordInput.Location = new System.Drawing.Point(251, 152);
             this.passwordInput.Name = "passwordInput";
             this.passwordInput.Size = new System.Drawing.Size(176, 23);
             this.passwordInput.TabIndex = 1;
@@ -59,17 +59,17 @@ namespace DisplayFormApp.src
             // 
             this.aliasLabel.AutoSize = true;
             this.aliasLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.aliasLabel.Location = new System.Drawing.Point(257, 130);
+            this.aliasLabel.Location = new System.Drawing.Point(92, 105);
             this.aliasLabel.Name = "aliasLabel";
-            this.aliasLabel.Size = new System.Drawing.Size(137, 25);
+            this.aliasLabel.Size = new System.Drawing.Size(58, 25);
             this.aliasLabel.TabIndex = 2;
-            this.aliasLabel.Text = "Microsoft Alias";
+            this.aliasLabel.Text = "Email";
             // 
             // passwordLabel
             // 
             this.passwordLabel.AutoSize = true;
             this.passwordLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.passwordLabel.Location = new System.Drawing.Point(257, 200);
+            this.passwordLabel.Location = new System.Drawing.Point(92, 150);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(91, 25);
             this.passwordLabel.TabIndex = 3;
@@ -78,40 +78,40 @@ namespace DisplayFormApp.src
             // pullDataButton
             // 
             this.pullDataButton.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.pullDataButton.Location = new System.Drawing.Point(308, 315);
+            this.pullDataButton.Location = new System.Drawing.Point(156, 207);
             this.pullDataButton.Name = "pullDataButton";
             this.pullDataButton.Size = new System.Drawing.Size(176, 54);
             this.pullDataButton.TabIndex = 4;
             this.pullDataButton.Text = "Pull Data";
             this.pullDataButton.UseVisualStyleBackColor = true;
+            this.pullDataButton.Click += new System.EventHandler(this.pullDataButton_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(12, 61);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(92, 29);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(781, 28);
+            this.label3.Size = new System.Drawing.Size(335, 31);
             this.label3.TabIndex = 5;
-            this.label3.Text = "In order to pull the schedules automatically the application needs an account wit" +
-    "h access";
+            this.label3.Text = "Login to give app access to SP";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // errorText
             // 
             this.errorText.AutoSize = true;
             this.errorText.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.errorText.ForeColor = System.Drawing.Color.Firebrick;
-            this.errorText.Location = new System.Drawing.Point(300, 89);
+            this.errorText.Location = new System.Drawing.Point(200, 60);
             this.errorText.Name = "errorText";
-            this.errorText.Size = new System.Drawing.Size(140, 25);
+            this.errorText.Size = new System.Drawing.Size(0, 25);
             this.errorText.TabIndex = 6;
-            this.errorText.Text = "";
             // 
             // AutomatePullingDataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(493, 273);
             this.Controls.Add(this.errorText);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pullDataButton);
@@ -120,8 +120,7 @@ namespace DisplayFormApp.src
             this.Controls.Add(this.passwordInput);
             this.Controls.Add(this.aliasInput);
             this.Name = "AutomatePullingDataForm";
-            this.Text = "Form3";
-            this.Load += new System.EventHandler(this.AutomatePullingDataForm_Load);
+            this.Text = "Get Schedules From SP";
             this.ResumeLayout(false);
             this.PerformLayout();
 

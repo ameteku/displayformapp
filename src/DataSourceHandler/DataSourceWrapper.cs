@@ -12,14 +12,6 @@ namespace DisplayFormApp.DataSourceHandler
     {
         public getClassesDelegate getClassesFunction { get; set; }
 
-        public DataSourceWrapper(getClassesDelegate getClassFunction)
-        {
-            this.getClassesFunction = getClassFunction;
-        }
-
-        public DataSourceWrapper()
-        {
-
-        }
+        public DataSourceWrapper() {}
     }
 }

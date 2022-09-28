@@ -28,50 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainEntryForm));
             this.scheduleOption1Button = new System.Windows.Forms.Button();
             this.scheduleOption2Button = new System.Windows.Forms.Button();
             this.MainHeader = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // scheduleOption1Button
             // 
-            this.scheduleOption1Button.Location = new System.Drawing.Point(76, 220);
-            this.scheduleOption1Button.Name = "button1";
+            this.scheduleOption1Button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.scheduleOption1Button.Location = new System.Drawing.Point(64, 142);
+            this.scheduleOption1Button.Name = "scheduleOption1Button";
             this.scheduleOption1Button.Size = new System.Drawing.Size(103, 58);
             this.scheduleOption1Button.TabIndex = 0;
-            this.scheduleOption1Button.Text = "Automate";
+            this.scheduleOption1Button.Text = "Pull From SharePoint";
             this.scheduleOption1Button.UseVisualStyleBackColor = true;
-            this.scheduleOption1Button.Click += onAutomateButtonClick;
+            this.scheduleOption1Button.Click += new System.EventHandler(this.scheduleOption1Button_Click);
+
             // 
-            // button2
+            // scheduleOption2Button
             // 
-            this.scheduleOption2Button.Location = new System.Drawing.Point(370, 220);
-            this.scheduleOption2Button.Name = "button2";
+            this.scheduleOption2Button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.scheduleOption2Button.Location = new System.Drawing.Point(304, 142);
+            this.scheduleOption2Button.Name = "scheduleOption2Button";
             this.scheduleOption2Button.Size = new System.Drawing.Size(103, 58);
             this.scheduleOption2Button.TabIndex = 1;
-            this.scheduleOption2Button.Text = "Upload Schedule";
+            this.scheduleOption2Button.Text = "Local Upload";
             this.scheduleOption2Button.UseVisualStyleBackColor = true;
-            this.scheduleOption2Button.Click += onManualButtonClick;
+            this.scheduleOption2Button.Click += new System.EventHandler(this.scheduleOption2Button_Click);
             // 
-            // label1
+            // MainHeader
             // 
             this.MainHeader.AutoSize = true;
-            this.MainHeader.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MainHeader.Location = new System.Drawing.Point(178, 134);
-            this.MainHeader.Name = "label1";
-            this.MainHeader.Size = new System.Drawing.Size(236, 31);
+            this.MainHeader.BackColor = System.Drawing.Color.Transparent;
+            this.MainHeader.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.MainHeader.ForeColor = System.Drawing.Color.Black;
+            this.MainHeader.Location = new System.Drawing.Point(64, 9);
+            this.MainHeader.Name = "MainHeader";
+            this.MainHeader.Size = new System.Drawing.Size(365, 46);
             this.MainHeader.TabIndex = 2;
             this.MainHeader.Text = "CBA Schedule Display";
+            this.MainHeader.Click += new System.EventHandler(this.MainHeader_Click);
             // 
             // MainEntryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(474, 262);
             this.Controls.Add(this.MainHeader);
             this.Controls.Add(this.scheduleOption2Button);
             this.Controls.Add(this.scheduleOption1Button);
             this.Name = "MainEntryForm";
-            this.Size = new System.Drawing.Size(586, 340);
             this.Load += new System.EventHandler(this.MainEntryForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

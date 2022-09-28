@@ -26,6 +26,32 @@ namespace DisplayFormApp.src
             sPDataRetriever = new SPDataRetriever();
         }
 
+        private void onPullDataButtonClicked(Object obj, EventArgs e)
+
+        {
+            Console.WriteLine("Attempting to log in");
+
+            //first get username and password and pass to the authenticator
+            string username = aliasInput.Text;
+            string password = passwordInput.Text;
+            bool isSuccess = sPAuthenticator.retrieveAuthToken(username, password);
+
+            Console.WriteLine("Login success?", isSuccess);
+
+            //on success close dialog and pass ok message to mainentry form
+            if (isSuccess)
+            {
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                errorText.Text = "Failed to login, try again";
+                passwordInput.Clear();
+            }
+        }
+
+        //this function uses the authenticated token retrieved from sharepoint to pull data from the api and converts the data to a list of strings
         public List<Class> getClasses()
         {
             List<Class> classes = new List<Class>();
@@ -44,36 +70,17 @@ namespace DisplayFormApp.src
             return classes;
         }
 
-        private void onPullDataButtonClicked(Object obj, EventArgs e)
-
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("Attempting to log in");
-            
-            //first get username and password and pass to the authenticator
-            string username = aliasInput.Text;
-            string password = passwordInput.Text;
-            bool isSuccess = sPAuthenticator.retrieveAuthToken(username, password);
-
-            Console.WriteLine("Login success?", isSuccess);
-
-            //on success close dialog and pass ok message to mainentry form
-            if (isSuccess)
-            {                
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
-             else
-            {
-                errorText.Text = "Failed to login, try again";
-                passwordInput.Clear();
-            }
-
 
         }
 
-        
+        private void label3_Click(object sender, EventArgs e)
+        {
 
-        private void AutomatePullingDataForm_Load(object sender, EventArgs e)
+        }
+
+        private void pullDataButton_Click(object sender, EventArgs e)
         {
 
         }

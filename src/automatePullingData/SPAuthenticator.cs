@@ -9,8 +9,8 @@ namespace DisplayFormApp.src.automatePullingData
         private string siteCollectionUrl = "https://uazips.sharepoint.com";
          private bool isAuthenticated { get; set; }
         public string authToken { get; }
-        static private string clientSecret ="xxxxx"; //todo
-        static private string clientId = "xxxxx"; //todo
+        static private string clientSecret { get; } ="xxxxx"; //todo
+        static private string clientId { get; } = "xxxxx"; //todo
 
         public SPAuthenticator()
         {
@@ -29,7 +29,7 @@ namespace DisplayFormApp.src.automatePullingData
 
             SecureString secureString = new SecureString();
             password.ToList().ForEach(secureString.AppendChar);
-            ctx.Credentials = new SharePo(username, secureString);
+           // ctx.Credentials = new SharePo(username, secureString);
 
             isAuthenticated = isSuccess;
             

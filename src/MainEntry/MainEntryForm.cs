@@ -1,15 +1,5 @@
 ﻿using DisplayFormApp.DataSourceHandler;
 using DisplayFormApp.src;
-using DisplayFormApp.src.automatePullingData;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace DisplayFormApp.MainEntry
 {
@@ -26,7 +16,7 @@ namespace DisplayFormApp.MainEntry
             InitializeComponent();
         }
 
-        void onAutomateButtonClick(Object obj, EventArgs args)
+        void onAutomateButtonClick()
         {
             Console.WriteLine("Automate clicked");
             dataSourceWrapper = new DataSourceWrapper();
@@ -40,9 +30,9 @@ namespace DisplayFormApp.MainEntry
             }
         }
 
-        void onManualButtonClick(Object obj, EventArgs args)
+        void onManualButtonClick()
         {
-            Console.Write("Manual clickeeddddd");
+            Console.Write("Manual upload clicked");
             dataSourceWrapper = new DataSourceWrapper();
             folderPathGetterForm = new Form2();
             DialogResult result =  folderPathGetterForm.ShowDialog();
@@ -64,6 +54,21 @@ namespace DisplayFormApp.MainEntry
         private void MainEntryForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void MainHeader_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void scheduleOption2Button_Click(object sender, EventArgs e)
+        {
+            onManualButtonClick();
+        }
+
+        private void scheduleOption1Button_Click(object sender, EventArgs e)
+        {
+            onAutomateButtonClick();
         }
     }
 
